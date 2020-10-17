@@ -61,8 +61,6 @@ class Snake(object):
             self.body[i] = self.body[i-1]
         self.body[0] = tuple(map(lambda x,y:x+y, self.body[0], DIR[self.direction]))
 
-        print(self.body)
-
         if self.collision(self.body[0][0], self.body[0][1]):
             self.kill()
                 
@@ -76,7 +74,7 @@ class Snake(object):
             self.body.pop()
 
         self.body = [(WIDTH // 2 + 1, HEIGHT // 2),(WIDTH // 2, HEIGHT // 2)]
-        print(self.body)
+
         self.l = 1
         self.dead = True
 
