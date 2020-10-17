@@ -20,6 +20,59 @@ let std_quotes = ["Patience you must have, my young padawan.",
 ];
 
 function respond() {
-    // Your Code Here
-    console.log("Hello World!");
+   
+    var picture = document.getElementById("user_image");
+    var usertext = document.getElementById("input_text");
+    var displayedtext = document.getElementById("current_text");
+    console.log(usertext.value);
+
+    if (usertext.value.includes("cute") || usertext.value.includes("baby"))
+    {
+        if (usertext.value.includes("force") && usertext.value.includes("dark"))
+        {
+            picture.setAttribute("src", "img/cute-dark.jpg");
+        }
+        else if (usertext.value.includes("force"))
+        {
+            picture.setAttribute("src", "img/cute-force.jpg");
+        }
+        else
+        {
+            picture.setAttribute("src", "img/cute-std.jpg");
+        }
+    }
+    else
+    {
+        if (usertext.value.includes("force") && usertext.value.includes("dark"))
+        {
+            picture.setAttribute("src", "img/regular-dark.jpg");
+        }
+        else if (usertext.value.includes("force"))
+        {
+            picture.setAttribute("src", "img/regular-force.jpg");
+        }
+        else
+        {
+            picture.setAttribute("src", "img/regular-std.jpg");
+        }
+    }
+
+    usertext.value = "";
+    var random1 = Math.floor(Math.random() * 3) + 1;
+    var random2 = Math.floor(Math.random() * 5);
+    var random3 = Math.floor(Math.random() * 5) + 5;
+    var hmm = "m";
+
+    if (random1 == 1)
+    {
+        displayedtext.innerHTML = dark_quotes[random2] + " Yes, h" + hmm.repeat(random3) + ".";;
+    }
+    else if (random1 == 2)
+    {
+        displayedtext.innerHTML = force_quotes[random2] + " Yes, h" + hmm.repeat(random3) + ".";;
+    }
+    else
+    {
+        displayedtext.innerHTML = std_quotes[random2] + " Yes, h" + hmm.repeat(random3) + ".";
+    }
 }
