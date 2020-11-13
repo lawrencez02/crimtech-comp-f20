@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+.PanelContainer {
+  /* TODO: Your CSS Here! */
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 1000px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.Panel {
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 500px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
